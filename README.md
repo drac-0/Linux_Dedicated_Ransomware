@@ -9,7 +9,7 @@ objectives :
 
 finished in 04/10/2025. YIPPIEEE :D
 
-it looks like there is a lot of room for improvisation here. This is some of them i could think of for now
+it looks like there is a lot of room for improvisation here. Here is some of them that i could think of for now
 
 improvisation objectives 
 1. default wallpaper changer
