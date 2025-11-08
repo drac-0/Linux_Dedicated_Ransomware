@@ -1,16 +1,12 @@
-Repo as a documentation for this short-mid term project of mine
+# SRANSOM
 
-Created at 09/09/2025
+SRANSOM first created at 09/09/2025 and finished at 04/10/2025. Its a intermediate level project i guess?
 
-objectives :
-1. filecollector ✓ (commited in 09/09/2025)
-2. encrypt function ✓ (commited in 14/09/2025)
-3. telegram key sender ✓ (commited in 04/10/2025) 
+#Installation
 
-finished in 04/10/2025. YIPPIEEE :D
+You will need a couple library here, i've put all of them inside a requirement file.
 
-it looks like there is a lot of room for improvisation here. Here is some of them that i could think of for now
+'''bash
+pip install requirement.txt
+'''
 
-improvisation objectives 
-1. default wallpaper changer
-2. optimize file collector function by writing it in bash
