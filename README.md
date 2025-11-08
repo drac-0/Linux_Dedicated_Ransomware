@@ -9,7 +9,7 @@ You can slip this script inside anything.
 
 SRANSOM first created at 09/09/2025 and finished at 04/10/2025. 
 
-**NO AI IS USED IN THIS PROJECT**
+**NO AI IS BEING USED IN THIS PROJECT**
 
 ## Installation
 
@@ -39,6 +39,6 @@ Just watch this tutorial, i have no time to teach you.
 
 [How to set the bot father](https://www.youtube.com/watch?v=RIrIXLAj8bE&pp=ygUbYm90ZmF0aGVyIHRlbGVncmFtIHR1dG9yaWFs)
 
-## After Word
+## Afterword
 
 *I hope this reach the right people and being used rightfully*
