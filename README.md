@@ -37,7 +37,7 @@ Change to what?
 
 Just watch this tutorial, i have no time to teach you.
 
-(How to set the bot father)[https://www.youtube.com/watch?v=RIrIXLAj8bE&pp=ygUbYm90ZmF0aGVyIHRlbGVncmFtIHR1dG9yaWFs]
+[How to set the bot father](https://www.youtube.com/watch?v=RIrIXLAj8bE&pp=ygUbYm90ZmF0aGVyIHRlbGVncmFtIHR1dG9yaWFs)
 
 ## After Word
 
