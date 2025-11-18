@@ -1,4 +1,4 @@
-# SRANSOM
+# OracleRansom
 
 Linux Dedicated Ransomware
 
