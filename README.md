@@ -2,7 +2,7 @@
 
 Linux Dedicated Ransomware
 
-![https://static.wikia.nocookie.net/hellocharlotte/images/a/a3/Oracle2-4.png/revision/latest?cb=20170515105218]
+![idealpictureof~~Virus~~God](https://static.wikia.nocookie.net/hellocharlotte/images/a/a3/Oracle2-4.png/revision/latest?cb=20170515105218)
 
 ## Overview
 
