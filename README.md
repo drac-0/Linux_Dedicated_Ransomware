@@ -6,7 +6,7 @@ Linux Dedicated Ransomware
 
 ## Overview
 
-SRANSOM is a ransomware that dedicated for a machine with linux as its operation system. When the script executed, it will encrypt every file with any format without exception and proceed to send the key to open it to your telegram. 
+OracleRansom is a ransomware that dedicated for a machine with linux as its operation system. When the script executed, it will encrypt every file with any format without exception and proceed to send the key to open it to your telegram. 
 You can slip this script inside anything. 
 
 OracleRansom first started at 09/09/2025 and finished at 04/10/2025. 
